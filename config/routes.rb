@@ -1,7 +1,7 @@
 Blacklight::Application.routes.draw do
-  get "static_pages/about"
-
-  get "static_pages/faq"
+  
+  match '/faq', to: 'static_pages#faq'
+  match '/about', to: 'static_pages#about'
 
   root :to => "catalog#index"
 
