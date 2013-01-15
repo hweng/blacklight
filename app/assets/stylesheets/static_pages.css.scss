@@ -3,3 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url("http://ucsd.edu/common/cwp/active-cherry/base-min.css");
 @import url("http://ucsd.edu/common/cwp/active-cherry/cms-min.css");
+
+#tdr_search_content{
+
+	input,select {
+
+		border:1px solid
+	}
+
+    #search-term{
+	border: 1px solid #CCCCCC;
+    border-radius: 12px 12px 12px 12px;
+    outline: medium none;
+    padding: 1px 0.25em;
+    }
+}
