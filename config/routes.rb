@@ -1,9 +1,11 @@
 Blacklight::Application.routes.draw do
   
+ root :to => "catalog#index"
+
   match '/faq', to: 'static_pages#faq'
   match '/about', to: 'static_pages#about'
 
-  root :to => "catalog#index"
+  
 
   Blacklight.add_routes(self)
 
