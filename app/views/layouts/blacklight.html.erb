@@ -42,6 +42,7 @@
             <div id="search-found" class="row hidden-phone">
               <%= topbar_items.join('').html_safe %>
             </div>
+			
             <!-- /Top bar -->
                   <div class="row">
                       <div class="span12">
@@ -50,10 +51,13 @@
                         </div>
                       </div>    
                   </div>              
-
-                  <div class="row">
-                       <%= yield %>
-                       </div>
+				    <div id="tdr_content" class="tdr_fonts">
+						<div id="tdr_content_content">
+							<div id="tdr_3_col_content">
+								<%= yield %>
+							</div>
+						</div>
+                    </div>
 </div>
 
 <%= render :partial => 'shared/footer' %>
