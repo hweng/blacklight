@@ -1,8 +1,32 @@
+@import 'bootstrap';
 @import 'bootstrap-responsive';
 
 @import 'blacklight/blacklight'; 
 
-div.container
-{
-	@import 'bootstrap';
+.header_searchForm {
+  form {
+  	margin: 0;
+  	padding-top: 3px;
+  	font-size: 11px;
+  	margin-left: 6px;
+  }
+
+  label {
+  	color: #777777;
+  	font-weight: bold;
+  	vertical-align: baseline;
+  }
+
+  input,select{
+     border: 1px solid #aaaaaa;
+  }
+}
+
+#tdr_search_content {
+ width: 98%;
+ margin: 0 auto;
+ max-width: 960px;
+ text-align: right;
+
+
 }
