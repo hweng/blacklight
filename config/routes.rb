@@ -4,6 +4,7 @@ Blacklight::Application.routes.draw do
 
   match '/faq', to: 'static_pages#faq'
   match '/about', to: 'static_pages#about'
+  match '/DOV', to: 'static_pages#DOV'
 
   
 

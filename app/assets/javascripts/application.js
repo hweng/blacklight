@@ -16,3 +16,7 @@
 // Required by Blacklight
 //= require blacklight/blacklight
 //= require_tree .
+
+$(document).ready(function() {
+         $('.carousel').carousel
+      });
