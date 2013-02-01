@@ -7,4 +7,5 @@ class ApplicationController < ActionController::Base
   layout 'blacklight'
 
   protect_from_forgery
+  add_breadcrumb "HOME", ""
 end
