@@ -175,5 +175,4 @@ class CatalogController < ApplicationController
     config.spell_max = 5
   end
 
-    add_breadcrumb "TEST", ""
 end 

@@ -39,6 +39,10 @@ module Blacklight::CatalogHelperBehavior
     paginate Kaminari.paginate_array(response.docs, :total_count => pagination_info.total_count).page(pagination_info.current_page).per(pagination_info.per_page), options, &block
   end
 
+  def render_paginate_breadcrumbs(response)
+
+  end
+
   #
   # shortcut for built-in Rails helper, "number_with_delimiter"
   #
@@ -48,7 +52,6 @@ module Blacklight::CatalogHelperBehavior
   # Pass in an RSolr::Response. Displays the "showing X through Y of N" message.
   def render_pagination_info(response, options = {})
       pagination_info = paginate_params(response)
-
    # TODO: i18n the entry_name
       entry_name = options[:entry_name]
       entry_name ||= response.docs.first.class.name.underscore.sub('_', ' ') unless response.docs.empty?
@@ -106,5 +109,5 @@ module Blacklight::CatalogHelperBehavior
     response ||= @response
     response.response['numFound'] > 1
   end
-
+  
 end
