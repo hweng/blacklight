@@ -289,11 +289,6 @@ module Blacklight::BlacklightHelperBehavior
     return ''
   end
 
-  def breadcrumb_document(doc)
-    format = document_partial_name(doc).upcase
-    add_breadcrumb format, doc
-  end
-
   # a list of document partial templates to try to render for #render_document_partial
   def document_partial_path_templates
     # first, the legacy template names for backwards compatbility
@@ -359,14 +354,6 @@ module Blacklight::BlacklightHelperBehavior
 
     opts[:label] ||= t('blacklight.back_to_search')
     link_to opts[:label], link_url
-  end
-
-  def breadcrumb_for_catalog(opts={:label=>nil})
-    query_params = session[:search] ? session[:search].dup : {}
-    query_params.delete :counter
-    query_params.delete :total
-    add_breadcrumb "SEARCH RESULTS", url_for(query_params)
-    link_url = url_for(query_params)
   end
 
   def params_for_search(options={})

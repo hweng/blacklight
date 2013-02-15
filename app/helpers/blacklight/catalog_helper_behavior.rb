@@ -39,10 +39,6 @@ module Blacklight::CatalogHelperBehavior
     paginate Kaminari.paginate_array(response.docs, :total_count => pagination_info.total_count).page(pagination_info.current_page).per(pagination_info.per_page), options, &block
   end
 
-  def render_paginate_breadcrumbs(response)
-
-  end
-
   #
   # shortcut for built-in Rails helper, "number_with_delimiter"
   #
