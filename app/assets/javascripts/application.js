@@ -20,3 +20,12 @@
 $(document).ready(function() {
          $('.carousel').carousel
       });
+
+$(window).on('hashchange', function() {
+	    var urlhash = window.location.hash.substring(1);
+		if(urlhash.indexOf('test') !== -1)
+		{
+			document.getElementById("TestBox").innerHTML = " Hash is now this "+ urlhash;
+			console.log("HI" + urlhash);
+		}
+	});	  
