@@ -11,9 +11,6 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require 'blacklight_advanced_search'
-
-
 //= require jquery_ujs
 //
 // Required by Blacklight
@@ -23,12 +20,3 @@
 $(document).ready(function() {
          $('.carousel').carousel
       });
-	  
-	  $(window).on('hashchange', function() {
-	    var urlhash = window.location.hash.substring(1);
-		if(urlhash.indexOf('test') !== -1)
-		{
-			document.getElementById("TestBox").innerHTML = " Hash is now this "+ urlhash;
-			console.log("HI" + urlhash);
-		}
-	});

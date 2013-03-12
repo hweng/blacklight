@@ -10,8 +10,4 @@ class StaticPagesController < ApplicationController
   def DOV
   	add_breadcrumb "DOV", ""
   end
-
-  def test
-  	add_breadcrumb "TEST", ""
-  end
 end
