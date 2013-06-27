@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+    <title>Digital Library Collections</title>
+    <link href="http://pontos.ucsd.edu/dams/search/opensearch.xml" title="Blacklight" type="application/opensearchdescription+xml" rel="search"/>
+
+    <link href="/dams/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <link href="/dams/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/dams/assets/blacklight.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/dams/assets/blacklight_advanced_search/advanced_results.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/dams/assets/blacklight_advanced_search/blacklight_advanced_search_styles.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/dams/assets/blacklight_advanced_search.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/dams/assets/custom-overrides.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/dams/assets/custom-object-viewer.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/dams/assets/custom-collections.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/dams/assets/custom-search.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/dams/assets/custom-advanced-search.css?body=1" media="all" rel="stylesheet" type="text/css" />
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+      <![endif]-->
+
+      <!-- Le fav and touch icons -->
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+      <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+      <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-146052-10']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+
+    <meta content="authenticity_token" name="csrf-param" />
+    <meta content="Z/lgQjYNxiQzkUC6GqQmiNm1BqrqCG21+WRJPBsaF6U=" name="csrf-token" />
+
+</head>
+
+<body onload="$(&#x27;input#q&#x27;).focus();" class="blacklight-dams_provenance_collections blacklight-dams_provenance_collections-new">
+
+    <section id="main-container" class="container-fluid">
+        <h1 style="padding-botto: 10px">Create a new Dams provenance collection object</h1>
+        <form accept-charset="UTF-8" action="/dams/dams_provenance_collections" class="new_dams_provenance_collection" id="new_dams_provenance_collection" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="Z/lgQjYNxiQzkUC6GqQmiNm1BqrqCG21+WRJPBsaF6U=" /></div>
+          <label for="dams_provenance_collection_titleValue_">First Title</label>
+          <input id="dams_provenance_collection_titleValue_" name="dams_provenance_collection[titleValue][]" type="text" />
+          <label for="dams_provenance_collection_subtitle_">First SubTitle</label>
+          <input id="dams_provenance_collection_subtitle_" name="dams_provenance_collection[subtitle][]" type="text" />  
+          <label for="dams_provenance_collection_titleType_">First Title Type</label>
+          <input id="dams_provenance_collection_titleType_" name="dams_provenance_collection[titleType][]" type="text" />   
+          <label for="dams_provenance_collection_dateValue_">Date</label>
+          <input id="dams_provenance_collection_dateValue_" name="dams_provenance_collection[dateValue][]" type="text" />
+          <label for="dams_provenance_collection_beginDate_">Begin Date</label>
+          <input id="dams_provenance_collection_beginDate_" name="dams_provenance_collection[beginDate][]" type="text" /> 
+          <label for="dams_provenance_collection_endDate_">End Date</label>
+          <input id="dams_provenance_collection_endDate_" name="dams_provenance_collection[endDate][]" type="text" />    
+
+          <label for="dams_provenance_collection_noteValue_">Note</label>
+          <input id="dams_provenance_collection_noteValue_" name="dams_provenance_collection[noteValue][]" type="text" /> 
+
+          <label for="dams_provenance_collection_noteType_">Note Type</label>
+          <input id="dams_provenance_collection_noteType_" name="dams_provenance_collection[noteType][]" type="text" /> 
+
+          <label for="dams_provenance_collection_noteDisplayLabel_">Note Displaylabel</label>
+          <input id="dams_provenance_collection_noteDisplayLabel_" name="dams_provenance_collection[noteDisplayLabel][]" type="text" /> 
+
+          <label for="dams_provenance_collection_scopeContentNoteValue_">Scope Content Note</label>
+          <input id="dams_provenance_collection_scopeContentNoteValue_" name="dams_provenance_collection[scopeContentNoteValue][]" type="text" />  
+
+          <label for="dams_provenance_collection_scopeContentNoteType_">Scope Content Note Type</label>
+          <input id="dams_provenance_collection_scopeContentNoteType_" name="dams_provenance_collection[scopeContentNoteType][]" type="text" /> 
+
+          <label for="dams_provenance_collection_subjectType_">Simple Subject</label>
+          <select id="dams_provenance_collection_subjectType_" name="dams_provenance_collection[subjectType][]"><option value="">Select subject type</option><option value="BuiltWorkPlace">BuiltWorkPlace</option>
+            <option value="CulturalContext">CulturalContext</option>
+            <option value="Function">Function</option>
+            <option value="GenreForm">GenreForm</option>
+            <option value="Geographic">Geographic</option>
+            <option value="Iconography">Iconography</option>
+            <option value="ScientificName">ScientificName</option>
+            <option value="StylePeriod">StylePeriod</option>
+            <option value="Technique">Technique</option>
+            <option value="Temporal">Temporal</option>
+            <option value="Topic">Topic</option></select>
+            <input id="dams_provenance_collection_subjectTypeValue_" name="dams_provenance_collection[subjectTypeValue][]" type="text" /> 
+            <br>
+
+            <label for="dams_provenance_collection_subjectValue_">Complex Subject</label>
+            <input id="dams_provenance_collection_subjectValue_" name="dams_provenance_collection[subjectValue][]" type="text" />
+            <br>
+
+            <select id="dams_provenance_collection_subjectURI_" name="dams_provenance_collection[subjectURI][]"><option value="">Select predefined subject</option><option value="bbXXXXXX10">African Americans--Relations with Mexican Americans--History--20th Century</option>
+                <option value="bb04040404">Jefferson, Thomas, 1743-1826--Relics--1826</option>
+                <option value="bd55982337">Monticello--Description and travel</option>
+                <option value="bd6895173t">District of Columbia--Description and travel</option>
+                <option value="bd30043558">Virginia--Description and travel</option>
+                <option value="bd70316966">Tourism--Social aspects</option>
+                <option value="bd8328635n">Jamaica--Description and travel</option>
+                <option value="bd6724414c">Galaxies--Clusters</option>
+                <option value="bd9898616w">Bhutan--Description and travel</option>
+                <option value="bd08541663">Hong Kong--Description and travel</option>
+                <option value="bd95914450">Hong Kong Island--Description and travel</option>
+                <option value="bd8294504w">China--Description and travel</option>
+                <option value="bd05469972">Switzerland--Description and travel</option>
+                <option value="bd2765444h">Alaska--Description and travel</option>
+                <option value="bd8908844t">Barbados--Description and travel</option>
+                <option value="bd7270604m">Portugal--Description and travel</option>
+                <option value="bd9523183q">Germany--Description and travel</option>
+                <option value="bd30726140">Washington--Description and travel</option>
+                <option value="bd1775673d">Maryland--Description and travel</option>
+                <option value="bd6588004b">Curacao--Description and travel</option>
+                <option value="bd53251954">Netherlands Antilles--Description and travel</option>
+                <option value="bd3686953v">Peru--Description and travel</option>
+                <option value="bd2390013f">Chile--Description and travel</option>
+                <option value="bd4983893f">Brazil--Description and travel</option>
+                <option value="bd5939534m">Spain--Description and travel</option>
+                <option value="bd20487150">Balkan Peninsula--Description and travel</option>
+                <option value="bd3959994f">Norway--Description and travel</option>
+                <option value="bd26630562">Sweden--Description and travel</option>
+                <option value="bd3618697p">Micronesia--Description and travel</option>
+                <option value="bd9762093j">Guatemala--Description and travel</option>
+                <option value="bd8465153z">Panama--Description and travel</option>
+                <option value="bd07176436">Caribbean Sea--Description and travel</option>
+                <option value="bd29702255">Canada--Description and travel</option>
+                <option value="bd5222806v">Jordan--Description and travel</option>
+                <option value="bd2628923n">Marmara--Description and travel</option>
+                <option value="bd90794957">Syria--Description and travel</option>
+                <option value="bd6485616z">Egypt--Description and travel</option>
+                <option value="bd7782556j">Israel--Description and travel</option>
+                <option value="bd1331983p">Turkey--Description and travel</option>
+                <option value="bd39258658">Istanbul--Description and travel</option>
+                <option value="bd83968958">Denmark--Description and travel</option>
+                <option value="bd4540204s">Japan--Description and travel</option>
+                <option value="bd0649386z">Colombia--Description and travel</option>
+                <option value="bd41989037">Hawaii--Description and travel</option>
+                <option value="bbXXXXXXX5">Academic dissertations</option>
+                <option value="bd5734752p">Cosmology--Cosmic background radiation</option>
+                <option value="bd1878063t">Italy--Description and travel</option>
+                <option value="bd7987337z">Côte d&#x27;Ivoire--Description and travel</option>
+                <option value="bd0239824h">Martinique--Description and travel</option>
+                <option value="bd1536763k">France--Description and travel</option>
+                <option value="bd50862847">United States--Description and travel</option>
+                <option value="bd11954668">Nepal--Description and travel</option>
+                <option value="bd47449844">Greece--Description and travel</option>
+                <option value="bd9250145p">Netherlands--Description and travel</option>
+                <option value="bd18098059">United Kingdom--Description and travel</option>
+                <option value="bd3721084s">Russia--Description and travel</option>
+                <option value="bd2458276x">Finland--Description and travel</option>
+                <option value="bd3413915c">Mexico--Description and travel</option>
+                <option value="bd82262434">National socialism--Germany--Description and travel</option>
+                <option value="bd8840585s">Venezuela--Description and travel</option>
+                <option value="bd4301293t">Albemarle--Description and travel</option>
+                <option value="bd7509514r">Bermuda--Description and travel</option>
+                <option value="bd6826916t">Australia--Description and travel</option>
+                <option value="bd9386666c">Amazon River--Description and travel</option></select>  
+                <br>
+
+                <div style="display: inline;">
+                    <input class="btn-large btn-primary" name="commit" type="submit" value="Save" />
+                </div>
+
+                <div style="display: inline; padding-left: 5px;">
+                    <input class="btn-large btn-primary" type="button" value="Cancel"  onclick="location.href='/dams/dams_provenance_collections';" />
+                </div>
+                <!-- <a href="/dams/dams_provenance_collections" class="btn btn-primary">Cancel</a> -->
+            </form>
+        </section>
+
+        <script src="/dams/assets/jquery.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/blacklight/core.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/blacklight/checkbox_submit.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/blacklight/bookmark_toggle.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/blacklight/facet_expand_contract.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/blacklight/lightbox_dialog.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/blacklight/search_context.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/blacklight/select_submit.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/blacklight/zebra_stripe.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/blacklight/css_dropdowns.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/bootstrap-transition.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/bootstrap-collapse.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/bootstrap-alert.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/improved-modal/bootstrap-modalmanager.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/improved-modal/bootstrap-modal.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/blacklight/blacklight.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/bootstrap-affix.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/bootstrap-button.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/bootstrap-carousel.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/bootstrap-dropdown.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/bootstrap-modal.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/bootstrap-scrollspy.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/bootstrap-tab.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/bootstrap-tooltip.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/bootstrap-popover.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/bootstrap-typeahead.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/bootstrap.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/audio.min.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/search.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/views-object.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/views-units.js?body=1" type="text/javascript"></script>
+        <script src="/dams/assets/application.js?body=1" type="text/javascript"></script>
+
+
+        <script>
+        if (document.getElementById("simple-audio")){
+            audiojs.events.ready(function(){audiojs.create(document.getElementById("simple-audio"));});
+        }
+        </script>
+
+        <!-- show debugging parameters in development -->
+        
+
+    </body>
+    </html>
