@@ -8,8 +8,10 @@
   <meta name="description" content=""> 
   <!-- DAMS Editor styles --> 
   <link href="docs/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="docs/assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="docs/assets/css/DAMSEditor.css" rel="stylesheet">
   <link href="docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="docs/assets/css/bootstrap-responsive.min.css" rel="stylesheet">
 
   <link href="http://pontos.ucsd.edu/dams/search/opensearch.xml" title="Blacklight" type="application/opensearchdescription+xml" rel="search"/>
 
@@ -43,133 +45,42 @@
   </script>
   <script>
   $(document).ready(function(){
+    var counts = [];
 
-    var count1 = 0;
-    $(".btn-mini-plus1").click(function() {
+    for(var i = 1; i <= 5; ++i) {
+      counts[i] = 0;
+    }
+
+    $('i').click(function (e) {
       var tempScrollTop = $(window).scrollTop();
 
-      var $clone = $('.well1:eq(0)').clone();
+      if (e.target) {
+        if(e.target.id.substring(0,4) == 'plus') {
+          add(e.target.id.substring(4,5));
+        }
+        else {
+          subtract(e.target.id.substring(5,6));
+        }
+      }
+
+      $(window).scrollTop(tempScrollTop);
+      return false;
+    });
+
+    function add(i) {
+      var $clone = $('.well' + i + ':eq(0)').clone();
       $clone.find('[id]').each(function(){this.id+='someotherpart'});
-      $clone.attr('id', "added1"+(++count1));
-      $('.well1:eq(0)').after($clone);
-      $('.btn-mini-minus1').removeAttr('disabled');
+      $clone.attr('id', "added" + i +(++counts[i]));
+      $('.well' + i + ':eq(0)').after($clone);
+      $('.btn-mini-minus' + i).removeAttr('disabled');
+    }
 
-      $(window).scrollTop(tempScrollTop);
-      return false;
-    });
-
-    $('.btn-mini-minus1').click(function(){
-      var tempScrollTop = $(window).scrollTop();
-
-      $('#added1'+(count1--)).remove();
-      if (count1>0)  $('.btn-mini-minus1').removeAttr('disabled');
-      else $('.btn-mini-minus1').attr('disabled', 'disabled');
-
-      $(window).scrollTop(tempScrollTop);
-      return false;
-    });
-
-    var count2 = 0;
-    $(".btn-mini-plus2").click(function() {
-      var tempScrollTop = $(window).scrollTop();
-
-      var $clone = $('.well2:eq(0)').clone();
-      $clone.find('[id]').each(function(){this.id+='someotherpart'});
-      $clone.attr('id', "added2"+(++count2));
-      $('.well2:eq(0)').after($clone);
-      $('.btn-mini-minus2').removeAttr('disabled');
-
-      $(window).scrollTop(tempScrollTop);
-      return false;
-    });
-
-    $('.btn-mini-minus2').click(function(){
-      var tempScrollTop = $(window).scrollTop();
-
-
-      $('#added2'+(count2--)).remove();
-      if (count2>0)  $('.btn-mini-minus2').removeAttr('disabled');
-      else $('.btn-mini-minus2').attr('disabled', 'disabled');
-
-      $(window).scrollTop(tempScrollTop);
-      return false;
-    });
-
-    var count3 = 0;
-    $(".btn-mini-plus3").click(function() {
-      var tempScrollTop = $(window).scrollTop();
-
-      var $clone = $('.well3:eq(0)').clone();
-      $clone.find('[id]').each(function(){this.id+='someotherpart'});
-      $clone.attr('id', "added3"+(++count3));
-      $('.well3:eq(0)').after($clone);
-      $('.btn-mini-minus3').removeAttr('disabled');
-
-      $(window).scrollTop(tempScrollTop);
-      return false;
-    });
-
-    $('.btn-mini-minus3').click(function(){
-      var tempScrollTop = $(window).scrollTop();
-
-      $('#added3'+(count3--)).remove();
-      if (count3>0)  $('.btn-mini-minus3').removeAttr('disabled');
-      else $('.btn-mini-minus3').attr('disabled', 'disabled');
-
-      $(window).scrollTop(tempScrollTop);
-      return false;
-    });
-
-    var count4 = 0;
-    $(".btn-mini-plus4").click(function() {
-      var tempScrollTop = $(window).scrollTop();
-
-      var $clone = $('.well4:eq(0)').clone();
-      $clone.find('[id]').each(function(){this.id+='someotherpart'});
-      $clone.attr('id', "added4"+(++count4));
-      $('.well4:eq(0)').after($clone);
-      $('.btn-mini-minus4').removeAttr('disabled');
-
-      $(window).scrollTop(tempScrollTop);
-      return false;
-    });
-
-    $('.btn-mini-minus4').click(function(){
-      var tempScrollTop = $(window).scrollTop();
-
-      $('#added4'+(count4--)).remove();
-      if (count4>0)  $('.btn-mini-minus4').removeAttr('disabled');
-      else $('.btn-mini-minus4').attr('disabled', 'disabled');
-
-      $(window).scrollTop(tempScrollTop);
-      return false;
-    });
-
-    var count5 = 0;
-    $(".btn-mini-plus5").click(function() {
-      var tempScrollTop = $(window).scrollTop();
-
-      var $clone = $('.well5:eq(0)').clone();
-      $clone.find('[id]').each(function(){this.id+='someotherpart'});
-      $clone.attr('id', "added5"+(++count5));
-      $('.well5:eq(0)').after($clone);
-      $('.btn-mini-minus5').removeAttr('disabled');
-
-      $(window).scrollTop(tempScrollTop);
-      return false;
-    });
-
-    $('.btn-mini-minus5').click(function(){
-      var tempScrollTop = $(window).scrollTop();
-
-      $('#added5'+(count5--)).remove();
-      if (count5>0)  $('.btn-mini-minus5').removeAttr('disabled');
-      else $('.btn-mini-minus5').attr('disabled', 'disabled');
-
-      $(window).scrollTop(tempScrollTop);
-      return false;
-    });
-  });
+    function subtract(i) {
+      $('#added' + i +(counts[i]--)).remove();
+      if (counts[i] > 0)  $('.btn-mini-minus' + i).removeAttr('disabled');
+      else $('.btn-mini-minus' + i).attr('disabled', 'disabled');     
+    }
+});
 </script>
 
 </head>
@@ -208,12 +119,12 @@
      <div class="title">     
        <div class="well-head">
          <div class="row">  
-          <div class="span11"> 
+          <div class="span">
            <h4>TITLE</h4> 
          </div>     
          <div>
-           <a class="btn-mini-plus1" href="#" title="Add"><i class="icon-plus icon-white"></i></a>
-           <a class="btn-mini-minus1" href="#" title="Remove"><i class="icon-minus icon-white"></i></a>      
+           <a class="btn-mini-plus1" href="#" title="Add"><i class="icon-plus icon-white" id="plus1"></i></a>
+           <a class="btn-mini-minus1" href="#" title="Remove"><i class="icon-minus icon-white" id="minus1"></i></a>      
          </div>
        </div>
      </div>    
@@ -260,12 +171,12 @@
   <div class="date">     
    <div class="well-head">
      <div class="row">  
-      <div class="span11"> 
+      <div class="span"> 
        <h4>DATE</h4> 
      </div>     
      <div>
-       <a class="btn-mini-plus2" href="#" title="Add"><i class="icon-plus icon-white"></i></a>
-       <a class="btn-mini-minus2" href="#" title="Remove"><i class="icon-minus icon-white"></i></a>      
+       <a class="btn-mini-plus2" href="#" title="Add"><i class="icon-plus icon-white" id="plus2"></i></a>
+       <a class="btn-mini-minus2" href="#" title="Remove"><i class="icon-minus icon-white" id="minus2"></i></a>      
      </div>
    </div>
  </div>    
@@ -300,12 +211,12 @@
 <div class="note">     
  <div class="well-head">
    <div class="row">  
-    <div class="span11"> 
+    <div class="span"> 
      <h4>NOTE</h4> 
    </div>     
    <div>
-     <a class="btn-mini-plus3" href="#" title="Add"><i class="icon-plus icon-white"></i></a>
-     <a class="btn-mini-minus3" href="#" title="Remove"><i class="icon-minus icon-white"></i></a>      
+     <a class="btn-mini-plus3" href="#" title="Add"><i class="icon-plus icon-white" id="plus3"></i></a>
+     <a class="btn-mini-minus3" href="#" title="Remove"><i class="icon-minus icon-white" id="minus3"></i></a>      
    </div>
  </div>
 </div>    
@@ -349,15 +260,15 @@
 <!-- END OF NOTE -->
 
 <!-- SUBJECT INFORMATION -->    
-<div class="scope-content">     
+<div class="subject">     
  <div class="well-head">
    <div class="row">  
-    <div class="span11"> 
+    <div class="span"> 
      <h4>SUBJECT</h4> 
    </div>     
    <div>
-     <a class="btn-mini-plus4" href="#" title="Add"><i class="icon-plus icon-white"></i></a>
-     <a class="btn-mini-minus4" href="#" title="Remove"><i class="icon-minus icon-white"></i></a>      
+     <a class="btn-mini-plus4" href="#" title="Add"><i class="icon-plus icon-white" id="plus4"></i></a>
+     <a class="btn-mini-minus4" href="#" title="Remove"><i class="icon-minus icon-white" id="minus4"></i></a>      
    </div>
  </div>
 </div>    
@@ -394,15 +305,15 @@
   <!-- END OF SUBJECT -->
 
   <!-- RELATED RESOURCE INFORMATION -->    
-  <div class="scope-content">     
+  <div class="related-resource">     
    <div class="well-head">
      <div class="row">  
-      <div class="span11"> 
+      <div class="span"> 
        <h4>RELATED RESOURCE</h4> 
      </div>     
      <div>
-       <a class="btn-mini-plus5" href="#" title="Add"><i class="icon-plus icon-white"></i></a>
-       <a class="btn-mini-minus5" href="#" title="Remove"><i class="icon-minus icon-white"></i></a>      
+       <a class="btn-mini-plus5" href="#" title="Add"><i class="icon-plus icon-white" id="plus5"></i></a>
+       <a class="btn-mini-minus5" href="#" title="Remove"><i class="icon-minus icon-white" id="minus5"></i></a>      
      </div>
    </div>
  </div>    
@@ -434,7 +345,7 @@
 </div>
 <!-- END OF RELATED RESOURCE -->
 
-<div class="form-actions">
+<div class="actions">
  <button class="btn" type="submit" id="save"><i class="icon-file"></i> Save</button>
  <button class="btn" type="submit" id="edit"><i class="icon-pencil"></i> Edit</button>
  <button class="btn btn-danger" type="submit" id="delete"><i class="icon-trash icon-white"></i> Delete</button>         
@@ -447,7 +358,7 @@
 
 <hr>  
 <footer>  
-  <p>UCSD Libraries Digital Asset Management System (DAMS) | 2012</p>  
+  <p style="text-align: center;">UCSD Libraries Digital Asset Management System (DAMS) | 2012</p>  
 </footer>
 
 </div> <!-- /container --> 
