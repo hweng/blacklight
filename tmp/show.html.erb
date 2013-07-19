@@ -1,19 +1,16 @@
 <div class="row-fluid">
-<<<<<<< HEAD
 	<div id="content" class="show-document span9">
-=======
-  <div id="content" class="show-document span9">
->>>>>>> d4c1e80d24d956695e18d20b4eefe015aa223f04
-		<div class="row-fluid">
-			<section class="dams-metadata span12">
-				<p class="sidebar-header"><h1><strong><%= @dams_provenance_collection.titleValue %></strong></h1></p>		
-				<h3>Title</h3>
+		<div id="content" class="show-document span9">
+			<div class="row-fluid">
+				<section class="dams-metadata span12">
+					<p class="sidebar-header"><h1><strong><%= @dams_provenance_collection.titleValue %></strong></h1></p>		
+					<h3>Title</h3>
 
-				<dl class="dl-horizontal">
-					<dt>Title</dt> <dd><%= @dams_provenance_collection.titleValue %></dd><br>
-					<dt>Subtitle</dt> <dd><%= @dams_provenance_collection.subtitle %></dd><br>
-					<dt>PartName</dt> <dd><%= @dams_provenance_collection.titlePartName %></dd><br>
-					<dt>PartNumber</dt ><dd><%= @dams_provenance_collection.titlePartNumber %></dd><br>
+					<dl class="dl-horizontal">
+						<dt>Title</dt> <dd><%= @dams_provenance_collection.titleValue %></dd><br>
+						<dt>Subtitle</dt> <dd><%= @dams_provenance_collection.subtitle %></dd><br>
+						<dt>PartName</dt> <dd><%= @dams_provenance_collection.titlePartName %></dd><br>
+						<dt>PartNumber</dt><dd><%= @dams_provenance_collection.titlePartNumber %></dd><br>
 						<dt>NonSort</dt> <dd><%= @dams_provenance_collection.titleNonSort %></dd><br>
 					</dl>
 
@@ -76,34 +73,30 @@
 					<%= link_to "Edit", edit_dams_provenance_collection_path(@dams_provenance_collection), class: "btn btn-primary"%>
 					<% end %>
 					<%= link_to "View All", dams_provenance_collections_path, class: "btn btn-primary" %>
-				</dl>	
-			</section>
+				</section>
+			</div>
+		</div>    
+
+		<div class="span3">
+			<div class="well dams-search-box">
+				<h4>Search</h4>
+				<%= render_unit_search_bar  %>
+			</div>
+
+			<p class="sidebar-header"><strong>Browse By</strong></p>
+			<ul class="unstyled sidebar-button-list">
+				<!-- hack in browse by collection, for RCI demo -->
+				<li><%= link_to "<i class='icon-eye-open'></i> Collection".html_safe, dams_collections_path, :class => "btn btn-block  btn-link" %></li>
+				<%= render_browse_facet_links %>
+			</ul>
+
+			<% if can? :update, @document then %>
+			<p class="sidebar-header"><strong>Editor Tools</strong></p>
+			<ul class="unstyled sidebar-button-list">
+				<li><%= link_to "<i class='icon-plus-sign'></i> Hydra View".html_safe, view_mads_topic_path(@document['id']), class: "btn btn-block btn-small btn-link"%></li>     
+				<li><%= link_to "<i class='icon-plus-sign'></i> Edit".html_safe, edit_mads_topic_path(@document['id']), class: "btn btn-block btn-small btn-link"%></li>
+			</ul>
+			<% end %>
 		</div>
-	</div>    
-
-	<div class="span3">
-		<div class="well dams-search-box">
-			<h4>Search</h4>
-			<%= render_unit_search_bar  %>
-		</div>
-
-		<p class="sidebar-header"><strong>Browse By</strong></p>
-		<ul class="unstyled sidebar-button-list">
-			<!-- hack in browse by collection, for RCI demo -->
-			<li><%= link_to "<i class='icon-eye-open'></i> Collection".html_safe, dams_collections_path, :class => "btn btn-block  btn-link" %></li>
-			<%= render_browse_facet_links %>
-		</ul>
-
-		<% if can? :update, @document then %>
-		<p class="sidebar-header"><strong>Editor Tools</strong></p>
-		<ul class="unstyled sidebar-button-list">
-			<li><%= link_to "<i class='icon-plus-sign'></i> Hydra View".html_safe, view_mads_topic_path(@document['id']), class: "btn btn-block btn-small btn-link"%></li>     
-			<li><%= link_to "<i class='icon-plus-sign'></i> Edit".html_safe, edit_mads_topic_path(@document['id']), class: "btn btn-block btn-small btn-link"%></li>
-		</ul>
-		<% end %>
 	</div>
-<<<<<<< HEAD
 </div>
-=======
-</div>
->>>>>>> d4c1e80d24d956695e18d20b4eefe015aa223f04
