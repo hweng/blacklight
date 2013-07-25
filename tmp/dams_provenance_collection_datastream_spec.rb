@@ -53,7 +53,7 @@ describe DamsProvenanceCollectionDatastream do
         subject.relationship.first.name.first.pid.should == "bb08080808"
       end
       it "should have hasPart" do
-        subject.hasPart.first.pid.should == "bb25252525"
+        subject.part_node.first.should == "#{Rails.configuration.id_namespace}bb25252525"
       end
       it "should have event" do
         subject.event.first.pid.should == "bb29292929"
