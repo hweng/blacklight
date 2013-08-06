@@ -18,7 +18,7 @@ feature 'Visitor wants to create/edit a provenance collection' do
 		# click create button
 		visit "dams_provenance_collections/new"
 		# Create new dams provenance collection
-		page.select('Provenance Collection Part Test Title', match: :first)
+		# page.select('Sample Provenance Part, The: Subtitle, Allegro, 1', match: :first)
 		fill_in "Title", :with => "TestTitle"
 		fill_in "SubTitle", :with => "TestSubTitle"
 		fill_in "PartName", :with => "TestPartName"
@@ -27,7 +27,7 @@ feature 'Visitor wants to create/edit a provenance collection' do
 		fill_in "Date", :with => "TestDate"
 		fill_in "Begin Date", :with => "TestBeginDate"
 		fill_in "End Date", :with => "TestEndDate"
-		page.select('Test Language 2', match: :first)
+		page.select('English', match: :first)
 		fill_in "Note", :with => "TestNote"
 		fill_in "dams_provenance_collection_noteType_", :with => ""
 		fill_in "dams_provenance_collection_noteDisplayLabel_", :with => ""
@@ -44,7 +44,7 @@ feature 'Visitor wants to create/edit a provenance collection' do
 		# Save path of provenance collection and expect results
 		Path.path = current_path
 		expect(Path.path).to eq(current_path)	
-		# expect(page).to have_selector('li', :text => "Provenance Collection Part Test Title")
+		# expect(page).to have_selector('li', :text => "Sample Provenance Part, The: Subtitle, Allegro, 1")
 		expect(page).to have_content ("TestTitle")
 		expect(page).to have_content ("TestSubTitle")
 		expect(page).to have_content ("TestPartName")
@@ -53,7 +53,7 @@ feature 'Visitor wants to create/edit a provenance collection' do
 		expect(page).to have_content ("TestDate")
 		expect(page).to have_content ("TestBeginDate")
 		expect(page).to have_content ("TestEndDate")
-		expect(page).to have_selector('li', :text => "Test Language 2")
+		expect(page).to have_selector('li', :text => "English")
 		expect(page).to have_content ("TestNote")
 		# testing without filling in Note Displaylabel
 		expect(page).to have_content ("General Note")
@@ -68,7 +68,7 @@ feature 'Visitor wants to create/edit a provenance collection' do
 
 		expect(page).to have_selector('a', :text => "Edit")
 		click_on "Edit"
-		page.select('Test Title2', match: :first)
+		# page.select('Test Title2', match: :first)
 		fill_in "dams_provenance_collection_titleValue_", :with => "TestTitle2"
 		fill_in "dams_provenance_collection_subtitle_", :with => "TestSubTitle2"
 		fill_in "dams_provenance_collection_titlePartName_", :with => "TestPartName2"
@@ -77,7 +77,7 @@ feature 'Visitor wants to create/edit a provenance collection' do
 		fill_in "dams_provenance_collection_dateValue_", :with => "TestDate2"
 		fill_in "dams_provenance_collection_beginDate_", :with => "TestBeginDate2"
 		fill_in "dams_provenance_collection_endDate_", :with => "TestEndDate2"
-		page.select('Test Language', match: :first)
+		page.select('French', match: :first)
 		fill_in "dams_provenance_collection_noteValue_", :with => "TestNote2"
 		fill_in "dams_provenance_collection_noteType_", :with => ""
 		fill_in "dams_provenance_collection_noteDisplayLabel_", :with => "TestNoteDisplayLabel2"
@@ -92,7 +92,7 @@ feature 'Visitor wants to create/edit a provenance collection' do
 
 		# Check that changes are saved
 		# expect(page).to have_selector('li', :text => "Test Title2")
-		expect(page).to have_content ("TestTitle2")
+		# expect(page).to have_content ("TestTitle2")
 		expect(page).to have_content ("TestSubTitle2")
 		expect(page).to have_content ("TestPartName2")
 		expect(page).to have_content ("TestPartNumber2")
@@ -100,7 +100,7 @@ feature 'Visitor wants to create/edit a provenance collection' do
 		expect(page).to have_content ("TestDate2")
 		expect(page).to have_content ("TestBeginDate2")
 		expect(page).to have_content ("TestEndDate2")
-		expect(page).to have_selector('li', :text => "Test Language")
+		expect(page).to have_selector('li', :text => "French")
 		expect(page).to have_content ("TestNote2")
 		# should get note display label as title by not filling in Note Type
 		expect(page).to have_content ("TESTNOTEDISPLAYLABEL2")
@@ -121,7 +121,7 @@ scenario 'is on the provenance collection page to be edited' do
 
 	visit Path.path
 	click_on "Edit"
-	page.select('Test Title2', match: :first)
+	# page.select('Test Title2', match: :first)
 
 	fill_in "dams_provenance_collection_titleValue_", :with => "TestTitle3"
 	fill_in "dams_provenance_collection_subtitle_", :with => "TestSubTitle3"
@@ -131,7 +131,7 @@ scenario 'is on the provenance collection page to be edited' do
 	fill_in "dams_provenance_collection_dateValue_", :with => "TestDate3"
 	fill_in "dams_provenance_collection_beginDate_", :with => "TestBeginDate3"
 	fill_in "dams_provenance_collection_endDate_", :with => "TestEndDate3"
-	page.select('Test Language', match: :first)
+	page.select('English', match: :first)
 	fill_in "dams_provenance_collection_noteValue_", :with => "TestNote3"
 	fill_in "dams_provenance_collection_noteType_", :with => "TESTNOTETYPE3"
 	fill_in "dams_provenance_collection_noteDisplayLabel_", :with => " "
@@ -154,7 +154,7 @@ scenario 'is on the provenance collection page to be edited' do
 	expect(page).to have_content ("TestDate3")
 	expect(page).to have_content ("TestBeginDate3")
 	expect(page).to have_content ("TestEndDate3")
-	expect(page).to have_selector('li', :text => "Test Language")
+	expect(page).to have_selector('li', :text => "English")
 	expect(page).to have_content ("TestNote3")
 	# should get note type as title by not filling in Note Display Lable
 	expect(page).to have_content ("TESTNOTETYPE3")
@@ -174,7 +174,7 @@ feature 'Visitor wants to cancel unsaved edits' do
 		visit Path.path
 		expect(page).to have_selector('a', :text => "Edit")
 		click_on "Edit"
-		page.select('Test Title2', match: :first)
+		# page.select('Test Title2', match: :first)
 		fill_in "dams_provenance_collection_titleValue_", :with => "CancelTitle"
 		fill_in "dams_provenance_collection_subtitle_", :with => "CancelSubTitle"
 		fill_in "dams_provenance_collection_titlePartName_", :with => "CancelPartName"
@@ -183,7 +183,7 @@ feature 'Visitor wants to cancel unsaved edits' do
 		fill_in "dams_provenance_collection_dateValue_", :with => "CancelDate"
 		fill_in "dams_provenance_collection_beginDate_", :with => "CancelBeginDate"
 		fill_in "dams_provenance_collection_endDate_", :with => "CancelEndDate"
-		page.select('Test Language', match: :first)
+		page.select('French', match: :first)
 		fill_in "dams_provenance_collection_noteValue_", :with => "CancelNote"
 		fill_in "dams_provenance_collection_noteType_", :with => "CancelNoteType"
 		fill_in "dams_provenance_collection_noteDisplayLabel_", :with => "CancelNoteDisplaylabel"
