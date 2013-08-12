@@ -166,10 +166,6 @@ describe DamsProvenanceCollectionDatastream do
         solr_doc = subject.to_solr
         solr_doc["topic_tesim"].should == ["mads:Topic value"]
       end 
-      it "should have a relatedResource" do
-        solr_doc = subject.to_solr
-        solr_doc["relatedResource_tesim"].should == ["CustodialResponsibilityNote value"]
-      end
       it "should have a stylePeriod value" do
         solr_doc = subject.to_solr
         solr_doc["stylePeriod_tesim"].should == ["dams:StylePeriod value"]
